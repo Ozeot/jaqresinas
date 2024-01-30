@@ -1,0 +1,371 @@
+/* Estilos gerais */
+body {
+    font-family: 'Lato', sans-serif; /* atualize a fonte aqui */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #2a2a2a; /* atualize a cor do texto aqui */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* atualize a cor de fundo aqui */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1rem 0;
+}
+
+p {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+}
+
+.logo {
+  margin-right: 20px;
+  padding-left: 20px;
+  text-align: left; /* Alterado de center para left */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #dd9933;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #dd9933;
+  color: #fff;
+}
+
+/* Pulsar icones de Redes Sociais */
+
+@keyframes pulse {0%{transform: scale(1);}50%{transform: scale(1.1);}100%{transform: scale(1);
+  }
+}
+
+.whatsapp img,
+.instagram img {
+  animation: pulse 2s infinite; /* 2s é a duração da animação, e "infinite" significa que ela será repetida indefinidamente */
+}
+
+/* Rede Sociais flutuantes */
+
+.social-icons {
+  position: fixed;
+  right: 20px; /* Ajuste a distância da borda direita conforme necessário */
+  bottom: 20px; /* Ajuste a distância da borda inferior conforme necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* Garante que os ícones estejam acima de outros elementos */
+}
+
+.social-icons a {
+  display: block;
+  margin-bottom: 10px; /* Espaçamento entre os ícones */
+}
+
+.social-icons img {
+  width: 70px; /* Ajuste o tamanho do ícone conforme necessário */
+  height: auto;
+}
+
+/* Estilos para tornar o menu responsivo em dispositivos móveis */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto; /* Adicionado para ajustar a altura do header */
+  }
+
+  .logo {
+    text-align: center;
+    margin-right: 0;
+    margin-top: 20px; /* Adicionado para adicionar espaço acima do logo */
+    padding-left: 0;
+  }
+
+  nav {
+    position: static; /* Alterado para static para que o nav fique logo abaixo do logo */
+    width: 100%;
+
+    flex-direction: row; /* Alterado para row para manter os itens lado a lado */
+    justify-content: center; /* Alterado para centralizar os itens */
+    align-items: center;
+    overflow-y: hidden;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+  }
+
+  nav ul {
+    padding: 20px 0;
+  }
+
+  nav li {
+    margin: 0 5px; /* Reduzido o espaço entre os itens para melhor ajuste */
+  }
+
+  section.portfolio {
+    margin-top: 0; /* Ajuste para remover o espaço entre o nav e o section */
+    text-align: center; /* Adicionado para centralizar o h2 */
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    padding-top: 1rem;
+  }
+  
+  section.portfolio {
+    grid-template-columns: 1fr 1fr;
+  }
+  section.portfolio h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem;
+    margin-top: 1.5rem;
+    padding: 0 0 1rem 0;
+    height: auto;
+    grid-column: 1/-1;
+    width: auto;
+  }
+ 
+  #sobre h2,
+  #sobre p {
+    text-align: center;
+  }
+    #sobre h2 {
+    padding-top: 0; /* Aumenta a margem superior do H2 */
+  }
+
+  #sobre .about-me-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 70%; /* Reduz o tamanho da imagem */
+  }
+
+  #sobre .col-12.col-md-8 {
+    padding-left: 30px; /* Aumenta o espaçamento lateral esquerdo */
+    padding-right: 30px; /* Aumenta o espaçamento lateral direito */
+  }
+}
+
+/* Títulos das seções */
+section h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.portfolio h2 {
+    grid-column: auto / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    margin-top: 1.5rem; /* Ajuste esse valor conforme necessário */
+    padding: 0.5rem;
+    width: 300px;
+    height: 200px;
+}
+
+/* Grid responsivo para o portfólio */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem 2rem 1rem;
+    margin-top: 0;
+    align-items: baseline;
+    background-color: #ffffff;
+}
+
+/* Animação de zoom nas imagens do portfólio */
+.portfolio img {
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adicionado box-shadow para destacar as imagens */
+}
+
+.portfolio img:hover {
+    transform: scale(1.1);
+}
+.portfolio img {
+    max-width: 90%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: block;
+}
+
+
+#sobre {
+  background-color: #f2f2f2;
+  padding: 10px 0 40px 0;
+}
+
+#sobre .container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+#sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#sobre p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#sobre img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+
+}
+
+@media (min-width: 768px) {
+  #sobre .row {
+    display: flex;
+    align-items: center;
+  }
+
+  #sobre .col-md-8 {
+    width: 60%;
+    padding: 0 25px;
+  }
+
+  #sobre .col-md-4 {
+    width: 40%;
+  }
+
+  #sobre .order-md-last {
+    order: 2;
+  }
+}
+
+#sobre img {
+    border-radius: 10px;
+}
+
+/* Estilos para a seção de contato */
+.contato {
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 4rem;
+    overflow-y: auto;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Estilos para links */
+a {
+    color: #f7c08a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e09f7d;
+}
+
+/* Estilos para o lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+#lightbox img.active {
+  opacity: 1;
+}
+
+#lightbox::before {
+  content: "Fechar";
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
